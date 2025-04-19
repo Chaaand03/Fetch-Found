@@ -1,0 +1,59 @@
+.navbar {
+    width: 100%;
+    display: flex;             
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background:  rgb(47, 1, 87);
+    padding-right: 2em;
+  }
+
+.brand {
+    font-family: 'Playfair Display', serif;  /* replace with your font */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff9c22;
+    padding-left: 2em;
+  }
+
+  .nav-list {
+    /* justify-content: flex-end; */
+    display: flex;
+    /* text-align: right; */
+    gap: 5rem;
+  }
+
+  .nav-list a {
+    color: #ff9c22;
+    text-decoration: none;
+    display: block;                 /* make the entire area clickable */
+    padding: 0.5rem 0;
+    /* float: right; */
+  }
+
+  .nav-list a.left{
+    justify-content: flex-start;
+    float: left;
+  }
+  .nav-list a.right{
+    justify-content: flex-end;
+    float: right;
+  }
+
+  .nav-list .active {
+    font-weight: bold;
+  }
+
+  .nav-list button.logout-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font: inherit;
+  }
+  

@@ -1,0 +1,144 @@
+.dog-card {
+    display: flex;
+    flex-direction: column;
+    background: #fdeedb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform .2s, box-shadow .2s;
+    height: 450px;
+    width: 300px;
+    position: relative;
+
+  }
+  
+  .dog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .dog-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .dog-name {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: rgb(47, 1, 87);  
+  }
+  
+  .dog-breed,
+  .dog-age,
+  .dog-zip {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #000000;
+  }
+  
+  .fav-button {
+    position:relative;
+    margin-top: 1em;
+    bottom: 12px;
+    left: 50%;
+    width: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(47, 1, 87);    /* primary blue */
+    color: #ff9c22;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+  }
+  
+  .fav-button:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+  
+  /* Active (favorited) state */
+  .fav-button.fav {
+    background-color: #ff9c22; 
+    color: rgb(47, 1, 87);
+  }
+  
+
+@media (max-width: 768px) {
+  .dog-card {
+    width: 45%;         
+    height: auto;       
+  }
+  .dog-image {
+    height: 200px;      
+  }
+  .dog-info {
+    padding: 0.8rem;
+  }
+  .dog-name {
+    font-size: 1.3rem;
+  }
+  .dog-breed,
+  .dog-age,
+  .dog-zip {
+    font-size: 0.85rem;
+  }
+  .fav-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    min-width: 90px;
+    bottom: 10px;
+  }
+  .fav-button:hover {
+    transform: translateX(-50%) scale(1.03);
+  }
+}
+
+
+@media (max-width: 480px) {
+  .dog-card {
+    width: 100%;        
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .dog-image {
+    height: 180px;
+  }
+  .dog-info {
+    padding: 0.6rem;
+  }
+  .dog-name {
+    font-size: 1.1rem;
+  }
+  .dog-breed,
+  .dog-age,
+  .dog-zip {
+    font-size: 0.8rem;
+  }
+  .fav-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+    bottom: 10px;  
+  }
+  .fav-button:hover {
+    transform: translateX(-50%);
+  }
+  .fav-button:active {
+    transform: translateX(-50%) scale(0.95);
+  }
+}
