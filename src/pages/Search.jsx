@@ -7,7 +7,7 @@ export default function Search() {
   const [dogs, setDogs] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
   const [breedFilter, setBreedFilter] = useState('');
-  const [sortOrder, setSortOrder] = useState('name:asc', 'age:asc');
+  const [sortOrder, setSortOrder] = useState('breed:asc');
   const [loading, setLoading] = useState(false);
 
   const [cursor, setCursor] = useState(null);
@@ -83,22 +83,11 @@ export default function Search() {
           className="sort-toggle"
           onClick={() =>
             setSortOrder(o =>
-              o === 'name:asc' ? 'name:desc' : 'name:asc'
+              o === 'breed:asc' ? 'breed:desc' : 'breed:asc'
             )
           }
         >
-          Sort by Name: {sortOrder === 'name:asc' ? 'A → Z' : 'Z → A'}
-        </button>
-
-        <button
-          className="sort-toggle"
-          onClick={() =>
-            setSortOrder(o =>
-              o === 'age:asc' ? 'age:desc' : 'age:asc'
-            )
-          }
-        >
-          Sort by Age: {sortOrder === 'age:asc' ? 'Ascending' : 'Decending'}
+          Sort by Breed: {sortOrder === 'breed:asc' ? 'A → Z' : 'Z → A'}
         </button>
       </div>
 

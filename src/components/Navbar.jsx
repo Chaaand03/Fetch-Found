@@ -12,7 +12,6 @@ export default function Navbar( { isLoggedIn, onLogout } ) {
           <>
             <li><NavLink to="/search">Search</NavLink></li>
             <li><NavLink to="/matchfound">Favorites</NavLink></li>
-            <li><NavLink to="/profile">Profile</NavLink></li>
             <li>
               <button className="logout-button" onClick={onLogout}>
                 Log Out

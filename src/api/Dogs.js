@@ -88,3 +88,13 @@ export async function getDogsByIds(dogIds = []) {
   return res.json();
 }
 
+export async function matchDogs(dogIds = []) {
+  const res = await fetch(`${BASE_URL}/dogs/match`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dogIds),
+  });
+  await checkStatus(res);
+  return res.json();  // { match: string }
+}

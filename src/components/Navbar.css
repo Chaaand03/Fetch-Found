@@ -49,11 +49,11 @@
   }
 
   .nav-list button.logout-button {
-    background: none;
+    background: #ff9c22;
     border: none;
-    color: white;
+    color: rgb(47, 1, 87);
     cursor: pointer;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
     font: inherit;
   }
   

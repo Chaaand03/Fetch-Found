@@ -1,6 +1,6 @@
 .match-found-page {
-    padding: 2rem 1rem;
-    margin-top: 4rem; 
+    padding: 1rem 1rem;
+    /* margin-top: 2rem;  */
     text-align: center;
     align-items: center;
     justify-items:auto;
@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 3rem;
+    padding-top: 1em;
     justify-items: center;
     align-items: center;
     padding: 2rem;
@@ -70,6 +71,92 @@
     opacity: 1;
   }
   
+  .match-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background-color: #2f0157;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    transition: background-color 0.2s;
+  }
+  .match-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  .match-button:not(:disabled):hover {
+    background-color: #47027a;
+  }
+  
+  .match-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    min-height: 60vh; /* adjust as needed */
+    box-sizing: border-box;
+  }
+  
+  /* The two‑panel block */
+  .match-block {
+    display: flex;
+    background: #ff9c22;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  /* Left side image */
+  .match-image {
+    width: 50%;
+    object-fit: cover;
+    height: auto;
+    /* aspect-ratio: 1.5;  */
+  }
+  
+  /* Right side details */
+  .match-details {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  
+  .match-name {
+    /* margin: 2rem 0 2rem; */
+    font-size: 2rem;
+    color: #2f0157;
+    justify-content: center;
+  }
+
+  .continue-button {
+    margin: 5rem auto 0;        
+    padding: 0.75rem 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 800;
+    background-color: #2f0157; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  .continue-button:hover {
+    background-color: #47027a;
+    transform: translateY(-2px);
+  }
+  
 
 @media screen and (max-width: 768px) {
     .match-found-page {
@@ -88,8 +175,24 @@
       gap: 1.5rem;
       padding: 1rem;
     }
+
+    .match-block {
+        flex-direction: column;
+        margin: 0 auto;
+      }
+      .match-image {
+        width: 100%;
+        height: 200px; /* or auto */
+      }
+      .match-details {
+        padding: 1.5rem;
+        font-size: 1.5rem;
+      }
+      .continue-button {
+        margin-top: 1.5rem;
+      }
   }
-  
+
 @media screen and (max-width: 480px) {
     .match-found-page {
       margin-left: 0.5em;
@@ -109,5 +212,15 @@
 
     .circle-image:active .info-overlay {
       opacity: 1;
+    }
+    .continue-button {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+
+    .match-details{
+        font-size: 1.25rem;
     }
   }

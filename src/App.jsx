@@ -58,12 +58,6 @@ function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
             isLoggedIn ? <MatchFound /> : <Navigate to="/login" replace />
           }
         />
-        <Route
-          path="/profile"
-          element={
-            isLoggedIn ? <Profile /> : <Navigate to="/login" replace />
-          }
-        />
         <Route path="*" element={<Navigate to="/search" replace />} />
       </Routes>
     </>

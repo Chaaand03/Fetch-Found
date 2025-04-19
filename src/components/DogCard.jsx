@@ -25,7 +25,6 @@ export default function DogCard({ dog }) {
         }
     
         localStorage.setItem('favorites', JSON.stringify(updated));
-        console.log('Cart now contains:', updated);
     };
     
 
@@ -34,7 +33,7 @@ export default function DogCard({ dog }) {
       <img src={dog.img} alt={dog.name} className="dog-image" />
       <div className="dog-info">
         <h3 className="dog-name">{dog.name}</h3>
-        <p className="dog-breed">{dog.breed}</p>
+        <h4 className="dog-breed">{dog.breed}</h4>
         <p className="dog-age">{dog.age} year{dog.age !== 1 ? 's' : ''} old</p>
         <p className="dog-zip">Zip Code: {dog.zip_code}</p>
       </div>
