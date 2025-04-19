@@ -10,7 +10,6 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import MatchFound from './pages/Match-Found';
-import Profile from './pages/Profile';
 import { logout as apiLogout } from './api/Dogs';
 
 function AppRoutes({ isLoggedIn, setIsLoggedIn }) {

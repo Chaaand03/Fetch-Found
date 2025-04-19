@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   line-height: 1.5;
   font-weight: 400;
   margin-left: 5em;
@@ -8,7 +8,7 @@
 
   color-scheme: light dark;
   color: rgb(47, 1, 87);
-  background-color: #fffaef;;
+  background-color: #fffaf5;;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

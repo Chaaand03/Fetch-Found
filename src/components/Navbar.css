@@ -13,7 +13,6 @@
   }
 
 .brand {
-    font-family: 'Playfair Display', serif;  /* replace with your font */
     font-size: 2rem;
     font-weight: bold;
     color: #ff9c22;
@@ -21,18 +20,15 @@
   }
 
   .nav-list {
-    /* justify-content: flex-end; */
     display: flex;
-    /* text-align: right; */
     gap: 5rem;
   }
 
   .nav-list a {
     color: #ff9c22;
     text-decoration: none;
-    display: block;                 /* make the entire area clickable */
+    display: block;                 
     padding: 0.5rem 0;
-    /* float: right; */
   }
 
   .nav-list a.left{

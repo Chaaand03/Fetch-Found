@@ -12,7 +12,7 @@ function Login( { onLogin } ) {
     const handleSubmit = async e => {
         e.preventDefault();
         await loginApi(name, email);
-        localStorage.setItem('token', 'logged-in');  // or whatever
+        localStorage.setItem('token', 'logged-in');
         onLogin(); 
         navigate('/search');
       };
@@ -27,8 +27,8 @@ function Login( { onLogin } ) {
           <h1>Fetch Login</h1>
           <form onSubmit={handleSubmit} className="login-form">
             <label>
-              Name
               <input
+                placeholder='Name...'
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
@@ -36,8 +36,8 @@ function Login( { onLogin } ) {
               />
             </label>
             <label>
-              Email
               <input
+                placeholder='example@email.com'
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}

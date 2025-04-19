@@ -1,68 +1,108 @@
-/* make the page a full‑height 2‑column flex container */
 .login-page {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  /* background-image: url('../assets/dogs-bg.jpg');
+  background-size: cover;      
+  background-position: center;      
+  background-repeat: no-repeat; */
+}
+
+/* Left column: form */
+.form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;  /* very light coral tint */
+}
+
+/* White card */
+.form-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.form-box h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #2f0157;          /* dark purple */
+}
+
+/* Form fields */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-form label {
+  font-size: 1.25rem;
+  color: #333;
+  text-align: left;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: none;
+  color: #2f0157;
+}
+
+/* Submit button */
+.login-form button {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ff9c22;;
+  background-color: rgb(47, 1, 87);  /* primary coral */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: rgb(77, 3, 142);
+}
+
+/* Right column: image */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.image-container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
   }
-  
-  /* each column takes 50% of width and centers its content */
   .form-container,
   .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* optional padding around the form block */
-  .form-container {
-    padding: 2rem;
-  }
-  
-  /* box to constrain form width */
-  .form-box {
+    flex: none;
     width: 100%;
-    max-width: 320px;
-    text-align: center;
+    padding: 2rem 1rem;
   }
-  
-  /* stack fields and button vertically with space */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  /* label above input */
-  .login-form label {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  /* inputs styling */
-  .login-form input {
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* button styling */
-  .login-form button {
-    padding: 0.75rem;
-    background-color: rgb(47, 1, 87);
-    border: none;
-    color: #ffa02b;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* image styling */
   .image-container img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 100%;
   }
-  
+}
