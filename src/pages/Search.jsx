@@ -52,21 +52,6 @@ export default function Search() {
     loadDogs();
   }, [breedFilter, sortOrder, cursor]);
 
-  // const [favorites, setFavorites] = useState(
-  //   () => JSON.parse(localStorage.getItem('fav_dogs') || '[]')
-  // );
-
-  // useEffect(() => {
-  //   localStorage.setItem('fav_dogs', JSON.stringify(favorites));
-  //   console.log(favorites)
-  // }, [favorites]);
-
-  // const toggleFavorite = id => {
-  //   setFavorites(prev =>
-  //     prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
-  //   );
-  // };
-
   return (
     <>
         <div className='intro'>
