@@ -1,38 +1,53 @@
 .login-page {
+  position: fixed;     
+  inset: 0;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
   display: flex;
-  min-height: 100vh;
-  /* background-image: url('../assets/dogs-bg.jpg');
-  background-size: cover;      
-  background-position: center;      
-  background-repeat: no-repeat; */
+  align-items: center;
+  justify-content: center;
 }
 
-/* Left column: form */
 .form-container {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;  /* very light coral tint */
+  background-color: none;  
 }
 
-/* White card */
 .form-box {
-  background: #ffffff;
-  padding: 2.5rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;     
+  gap: 1.5rem;             
+  padding: 2rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 1rem; */
+  background: none;
+  padding: 3rem;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  color: #ffffff;
+}
+
+.login-header {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;              
+  line-height: 1.2;
+  color:rgb(237, 228, 250) !important;
+  margin-bottom: 4rem;
 }
 
 /* Heading */
-.form-box h1 {
+/* .form-box h1 {
   margin-bottom: 1.5rem;
   font-size: 2rem;
-  color: #2f0157;          /* dark purple */
-}
+  color: #2f0157;         
+} */
 
 /* Form fields */
 .login-form {
@@ -41,30 +56,27 @@
   gap: 1.25rem;
 }
 
-.login-form label {
-  font-size: 1.25rem;
-  color: #333;
-  text-align: left;
-}
-
 .login-form input {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(237, 228, 250);
   border-radius: 6px;
   box-sizing: border-box;
   background: none;
-  color: #2f0157;
+  color:rgb(237, 228, 250);;
 }
-
+.login-form input::placeholder {
+  color: rgb(237, 228, 250);       
+  opacity: 1;        
+}
 /* Submit button */
 .login-form button {
   margin-top: 0.5rem;
   padding: 1rem;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ff9c22;;
+  color: #ff9c22;
   background-color: rgb(47, 1, 87);  /* primary coral */
   border: none;
   border-radius: 6px;
@@ -79,7 +91,7 @@
 /* Right column: image */
 .image-container {
   flex: 1;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   background-color: none;
@@ -88,7 +100,12 @@
 .image-container img {
   max-width: 80%;
   height: auto;
-  border-radius: 8px;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  object-fit: contain;
 }
 
 /* Responsive: stack on narrow screens */
@@ -100,9 +117,32 @@
   .image-container {
     flex: none;
     width: 100%;
-    padding: 2rem 1rem;
   }
   .image-container img {
     max-width: 100%;
   }
+}
+
+@media (max-width: 600px) {
+  .login-header {
+    margin-top: 8rem;
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+  .form-box {
+    padding: 2rem;
+    gap: 1rem;
+  }
+  .form-container,
+  .image-container {
+    flex: none;
+    width: 100%;
+  }
+  .image-container img {
+    display: block;        
+    width: 100%;           
+    height: auto;          
+    object-fit: contain;   
+    max-height: 35vh;      
+}
 }

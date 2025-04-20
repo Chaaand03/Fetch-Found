@@ -33,16 +33,24 @@ function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
       <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
 
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route
           path="/login"
           element={
+            isLoggedIn ? <Navigate to='/search' replace /> :
+            
             <Login
               onLogin={() => {
                 setIsLoggedIn(true);
                 navigate('/search', { replace: true });
               }}
             />
+            
+          }
+        />
+        <Route
+          path="/"
+          element={
+            isLoggedIn ? <Search /> : <Navigate to="/search" replace />
           }
         />
         <Route
@@ -67,10 +75,23 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // on mount, check if token exists
-    setIsLoggedIn(!!localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
+    let timer;
+  
+    if (token !== null && token.trim() !== "") {
+      // delay the “true” for 1 second
+      timer = setTimeout(() => {
+        setIsLoggedIn(true);
+        console.log("after delay:", !!localStorage.getItem("token"));
+      }, 300);
+    } else {
+      setIsLoggedIn(false);
+      console.log("no token:", !!token);
+    }
+  
+    // cleanup in case the component unmounts before the timeout
+    return () => clearTimeout(timer);
   }, []);
-
   return (
     <BrowserRouter>
       <AppRoutes

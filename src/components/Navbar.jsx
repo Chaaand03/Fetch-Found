@@ -19,7 +19,7 @@ export default function Navbar( { isLoggedIn, onLogout } ) {
             </li>
           </>
         ) : (
-          <li><NavLink to="/login">Login</NavLink></li>
+          <span></span>
         )}
       </ul>
     </nav>

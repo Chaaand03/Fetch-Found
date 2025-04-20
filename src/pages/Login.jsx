@@ -21,10 +21,13 @@ function Login( { onLogin } ) {
   return (
     <>
     <div className="login-page">
-      {/* LEFT HALF: form */}
+
       <div className="form-container">
+      {/* <div className='intro-text'>
+        <h1>Sign In & Sniff Out Your Perfect Companion</h1>
+      </div> */}
         <div className="form-box">
-          <h1>Fetch Login</h1>
+          <h1 className='login-header'>Sign In & Sniff Out Your Perfect Companion!</h1>
           <form onSubmit={handleSubmit} className="login-form">
             <label>
               <input
