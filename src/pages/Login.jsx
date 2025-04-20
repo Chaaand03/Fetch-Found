@@ -27,7 +27,7 @@ function Login( { onLogin } ) {
         <h1>Sign In & Sniff Out Your Perfect Companion</h1>
       </div> */}
         <div className="form-box">
-          <h1 className='login-header'>Sign In & Sniff Out Your Perfect Companion!</h1>
+          <h1 className='login-header'>Sign In & Sniff Out Your Paw-fect Companion!</h1>
           <form onSubmit={handleSubmit} className="login-form">
             <label>
               <input

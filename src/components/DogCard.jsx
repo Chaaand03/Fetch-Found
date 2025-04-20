@@ -41,9 +41,9 @@ export default function DogCard({ dog }) {
         className={`fav-button${isFav ? ' fav' : ''}`}
         onClick={handleFavClick}
       >
-        {isFav ? '♥ Added!' : '♡ Favorite'}
+        {isFav ? '♥ Added!' : '♡ Fav'}
       </button>
-      </div>
+    </div>
   );
 }
 

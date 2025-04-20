@@ -7,6 +7,7 @@
     justify-content: center;
     text-align: center;
     padding: 2rem 1rem;
+    margin-top: 4rem;
   }
   
   .maintext h1 {
@@ -60,17 +61,29 @@
   .loading {
     text-align: center;
     color: #777;
-    margin-top: 2rem;
+    margin-top: 5rem;
   }
   
+  .dog-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
   .dog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.75rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 32px;
   }
-  
+  /* .dog-grid .dog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  } */
+
 .pagination {
     display: flex;
     justify-content: space-between;  
@@ -106,7 +119,7 @@
   
 
 /* Responsive scaling  */
-  @media (max-width: 430px) {
+  @media (max-width: 480px) {
     .maintext h1 {
       font-size: 3rem;
     }
@@ -114,12 +127,11 @@
       font-size: 1rem;
     }
     .dog-grid {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      /* display: block;       */
-      padding: 0.5rem;
+      grid-template-columns: 1fr;
+      padding: 1rem;
     }
     .dog-grid > * {
-      margin-bottom: 1rem;  /* spacing between cards */
+      margin-bottom: 1rem;  
     }
   
     .pagination {
@@ -128,7 +140,7 @@
       padding: 0 0.5rem;
     }
     .pagination button {
-      width: 100%;          /* full‑width buttons */
+      width: 100%;          
       padding: 0.75rem;
       font-size: 0.9rem;
     }
@@ -141,13 +153,15 @@
     .subtext h4 {
       font-size: 1.75rem;
     }
-    .dog-grid{
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.75rem;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      margin-left: 5rem;
-      margin-right: 5rem;
+    .dog-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
   }
-  
+
+  @media (min-width: 1024px) {
+    .dog-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+  }

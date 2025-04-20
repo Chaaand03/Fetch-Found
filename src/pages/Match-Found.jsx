@@ -114,7 +114,7 @@ export default function MatchFound() {
               className="continue-button"
               onClick={() => navigate('/search')}
             >
-              Continue Search
+              Make a New Search
             </button>
           </div>
         ) : favDogs.length ? (

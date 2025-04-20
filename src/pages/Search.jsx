@@ -96,19 +96,17 @@ export default function Search() {
         <p className="loading">Loading dogs…</p>
       ) : (
         <>
+        <div className='dog-container'>
           <div className="dog-grid">
             {dogs.map(dog => (
               <DogCard 
                 key={dog.id} 
                 dog={dog}
-                // isFavorite={favorites.includes(dog.id)}
-                // onToggleFavorite={() => toggleFavorite(dog.id)} 
               />
             ))}
             {dogs.length === 0 && <p>No dogs found.</p>}
           </div>
 
-          {/* Pagination */}
           <div className="pagination">
             <button
               onClick={() => setCursor(prevCursor)}
@@ -123,6 +121,7 @@ export default function Search() {
               Next →
             </button>
           </div>
+        </div>
         </>
       )}
     </>
