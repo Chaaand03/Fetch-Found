@@ -25,6 +25,8 @@ export default function DogCard({ dog }) {
         }
     
         localStorage.setItem('favorites', JSON.stringify(updated));
+
+        window.dispatchEvent(new Event('favoritesChanged'));
     };
     
 

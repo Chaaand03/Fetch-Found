@@ -43,6 +43,12 @@ export default function MatchFound() {
     loadDogs();
   }, [favIds]);
 
+  const removeFavorite = (id) => {
+    const updated = favIds.filter(favId => favId !== id);
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavIds(updated);
+  };
+
   // Handler for “Make a Match”
   const handleMakeMatch = async () => {
     if (!favIds.length) return;
@@ -56,6 +62,13 @@ export default function MatchFound() {
     } finally {
       setLoadingMatch(false);
     }
+  };
+
+  const handleNewSearch = () => {
+    const ok = window.confirm(
+      'Are you sure you want to give up this match and look for a new one?'
+    );
+    if (ok) navigate('/search');
   };
   
   return (
@@ -112,10 +125,8 @@ export default function MatchFound() {
             </div>
             <button
               className="continue-button"
-              onClick={() => navigate('/search')}
-            >
-              Make a New Search
-            </button>
+              onClick={handleNewSearch}
+            >Make a New Search</button>
           </div>
         ) : favDogs.length ? (
 
@@ -135,6 +146,12 @@ export default function MatchFound() {
                     <p>Zip: {dog.zip_code}</p>
                   </div>
                 </div>
+                <button
+                    className="remove-button"
+                    onClick={() => removeFavorite(dog.id)}
+                  >
+                    Remove
+                  </button>
               </div>
             ))}
           </div>

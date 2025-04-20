@@ -14,6 +14,7 @@ import { logout as apiLogout } from './api/Dogs';
 
 function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
   const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       await apiLogout();
@@ -30,7 +31,7 @@ function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
 
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout}/>
 
       <Routes>
         <Route
