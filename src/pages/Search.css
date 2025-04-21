@@ -164,17 +164,15 @@
 
   .dog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  /* optional: center & limit the overall width */
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  box-sizing: border-box;
+    
   }
-  /* .dog-grid .dog-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  } */
 
 .pagination {
     display: flex;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './DogCard.css';
 
-export default function DogCard({ dog }) {
+export default function DogCard({ dog, favCount }) {
     const [isFav, setIsFav] = useState(false);
 
     useEffect(() => {
@@ -25,7 +25,6 @@ export default function DogCard({ dog }) {
         }
     
         localStorage.setItem('favorites', JSON.stringify(updated));
-
         window.dispatchEvent(new Event('favoritesChanged'));
     };
     
@@ -43,7 +42,7 @@ export default function DogCard({ dog }) {
         className={`fav-button${isFav ? ' fav' : ''}`}
         onClick={handleFavClick}
       >
-        {isFav ? '♥ Added!' : '♡ Fav'}
+        {isFav ? '♥ Added!' : '♡ Favorite'}
       </button>
     </div>
   );

@@ -10,7 +10,6 @@
     height: 400px;
     width: 100%;
     position: relative;
-
   }
   
   .dog-card:hover {
@@ -75,7 +74,7 @@
     background-color: #ff9c22; 
     color: rgb(47, 1, 87);
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     font-size: 0.9rem;
     border-radius: 4px;
     cursor: pointer;
@@ -89,7 +88,7 @@
 
 @media (max-width: 768px) {
   .dog-card {
-    width: 45%;         
+    width: 100%;         
     height: auto;       
   }
   .dog-image {

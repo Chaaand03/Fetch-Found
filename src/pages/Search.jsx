@@ -2,12 +2,14 @@ import  React, { useState, useEffect, useRef} from 'react'
 import './Search.css'
 import { searchDogs, getDogsByIds, getBreeds,getZipCodes } from '../api/Dogs';
 import DogCard from '../components/DogCard';
+import FavoritesFooter from '../components/FavoritesFooter';
 
 export default function Search() {
   const [dogs, setDogs] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
   const [breedFilter, setBreedFilter] = useState([]);
-  const [selectedBreeds, setSelectedBreeds] = useState([]); 
+  const [selectedBreeds, setSelectedBreeds] = useState([]);
+  const [toggledBreeds,setToggledBreeds] = useState([]); 
   const [sortOrder, setSortOrder] = useState('breed:asc');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,20 +34,21 @@ export default function Search() {
   }, []);
 
   const toggleBreed = breed => {
-    setSelectedBreeds(prev =>
+    setToggledBreeds(prev =>
       prev.includes(breed) 
         ? prev.filter(b => b !== breed) 
-        : [...prev, breed]
-    );
+        : [...prev, breed])
   };
 
   const applyFilter = () => {
+    setSelectedBreeds(toggledBreeds)
     setBreedFilter(selectedBreeds);
     setCursor(null);
     setIsOpen(false);
   };
 
   const clearFilter = () => {
+    setToggledBreeds([]);
     setSelectedBreeds([]);
     setBreedFilter([]);
     setCursor(null);
@@ -56,7 +59,6 @@ export default function Search() {
   };
   useEffect(() => {
     async function loadDogs() {
-      console.log(selectedBreeds)
       setLoading(true);
       try {
         const opts = { size: 30, sort: sortOrder };
@@ -88,6 +90,7 @@ export default function Search() {
         dropdownRef.current &&
         !dropdownRef.current.contains(e.target)
       ) {
+        setToggledBreeds(selectedBreeds);
         setIsOpen(false);
       }
     }
@@ -127,7 +130,7 @@ export default function Search() {
             <label key={breed}>
               <input
                 type="checkbox"
-                checked={selectedBreeds.includes(breed)}
+                checked={toggledBreeds.includes(breed)}
                 onChange={() => toggleBreed(breed)}
               />
               {breed}
@@ -184,7 +187,9 @@ export default function Search() {
                   Next →
                 </button>
               </div>
+              <FavoritesFooter />
             </div>
+            
           </>
         )}
       </>

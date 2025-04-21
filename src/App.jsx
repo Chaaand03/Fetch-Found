@@ -26,6 +26,7 @@ function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
     localStorage.removeItem('favorites')
     setIsLoggedIn(false);
     
+    window.dispatchEvent(new Event('favoritesChanged'));
     navigate('/login', { replace: true });
   };
 

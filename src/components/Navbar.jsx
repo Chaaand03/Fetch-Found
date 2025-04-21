@@ -12,16 +12,14 @@ export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
   );
 
   useEffect(() => {
-    // 2) Handler to update from localStorage
     function updateCount() {
       const arr = JSON.parse(localStorage.getItem('favorites') || '[]');
       setFavCount(arr.length);
-      console.log(favCount);
     }
 
     // // 3) Listen & cleanup
-    // window.addEventListener('favoritesChanged', updateCount);
-    // return () => window.removeEventListener('favoritesChanged', updateCount);
+    window.addEventListener('favoritesChanged', updateCount);
+    return () => window.removeEventListener('favoritesChanged', updateCount);
   }, []);
 
   function closeMenu() {
@@ -46,10 +44,10 @@ export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
             </li>
             <li className="favorites-item">
               <NavLink to="/matchfound" onClick={closeMenu}>
-              ♥
-              {/* {favCount > 0 && (
-                  <span className="badge">{favoritesCount}</span>
-                )} */}
+              Favorites
+              {favCount > 0 && (
+                  <span className='badge'>{favCount}</span>
+                )}
               </NavLink>
             </li>
             <li>

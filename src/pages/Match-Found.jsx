@@ -16,7 +16,6 @@ export default function MatchFound() {
   useEffect(() => {
     function loadFavorites() {
       const stored = JSON.parse(localStorage.getItem('favorites') || '[]');
-      console.log('Cart now contains:', stored);
       setFavIds(stored);
     }
     loadFavorites();
@@ -47,6 +46,7 @@ export default function MatchFound() {
     const updated = favIds.filter(favId => favId !== id);
     localStorage.setItem('favorites', JSON.stringify(updated));
     setFavIds(updated);
+    window.dispatchEvent(new Event('favoritesChanged'));
   };
 
   // Handler for “Make a Match”
@@ -117,8 +117,8 @@ export default function MatchFound() {
               />
               <div className="match-details">
                 <p>
-                <b>{matchDog.name}</b> is a <space />
-                <b>{matchDog.breed}</b> who is <space />
+                <b>{matchDog.name}</b> is a&ensp;
+                <b>{matchDog.breed}</b> who is&ensp;
                   {matchDog.age} year{matchDog.age !== 1 ? 's' : ''} old
                 and lives at {matchDog.zip_code} zip-location.</p>
               </div>
