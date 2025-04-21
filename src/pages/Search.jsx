@@ -1,6 +1,6 @@
 import  React, { useState, useEffect, useRef} from 'react'
 import './Search.css'
-import { searchDogs, getDogsByIds, getBreeds,getZipCodes } from '../api/Dogs';
+import { searchDogs, getDogsByIds, getBreeds } from '../api/Dogs';
 import DogCard from '../components/DogCard';
 import FavoritesFooter from '../components/FavoritesFooter';
 

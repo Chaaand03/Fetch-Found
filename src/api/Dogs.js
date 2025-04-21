@@ -2,9 +2,10 @@
 
 import { ENDPOINTS, API_BASE_URL } from "./APIConstants";
 
-async function checkStatus(response) {
+function checkStatus(response, errorMessage) {
   if (!response.ok) {
-    const errorText = await response.text();
+    const errorText = response.text();
+    window.alert(errorMessage);
     throw new Error(`HTTP ${response.status} – ${errorText}`);
   }
   return response;
@@ -20,7 +21,7 @@ export async function login(name, email) {
     },
     body: JSON.stringify({ name, email }),
   });
-  await checkStatus(res);
+  await checkStatus(res, 'Invalid username or email');
   return res;
 }
 
@@ -30,7 +31,7 @@ export async function logout() {
     method: 'POST',
     credentials: 'include'
   });
-  await checkStatus(res);
+  await checkStatus(res, 'Logout failed!');
   return res;
 }
 
@@ -39,16 +40,7 @@ export async function getBreeds() {
   const res = await fetch(ENDPOINTS.GET_DOG_BREEDS, {
     credentials: 'include',
   });
-  await checkStatus(res);
-  return res.json(); 
-}
-
-export async function getZipCodes() {
-  const res = await fetch(ENDPOINTS.GET_LOCATIONS, {
-    credentials: 'include',
-    method: 'POST',
-  });
-  await checkStatus(res);
+  await checkStatus(res, 'Failed to Fetch Dog Breeds!');
   return res.json(); 
 }
 
@@ -81,7 +73,7 @@ export async function searchDogs({
   }
 
   const res = await fetch(url, { credentials: 'include' });
-  await checkStatus(res);
+  await checkStatus(res, 'Searched Dogs not available!');
   return res.json();
 }
 
@@ -95,10 +87,11 @@ export async function getDogsByIds(dogIds = []) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(ids),
   });
-  await checkStatus(res);
+  await checkStatus(res, 'Searched Dogs not available!');
   return res.json();
 }
 
+//Post the matched dog
 export async function matchDogs(dogIds = []) {
   const res = await fetch(ENDPOINTS.MATCH_DOGS, {
     method: 'POST',
@@ -106,6 +99,6 @@ export async function matchDogs(dogIds = []) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dogIds),
   });
-  await checkStatus(res);
-  return res.json();  // { match: string }
+  await checkStatus(res, 'No Matched Dog returned!');
+  return res.json();
 }
