@@ -35,7 +35,7 @@
     margin: 2rem 1rem 1rem;
   }
   
-  .breed-filter {
+  /* .breed-filter {
     padding: 0.5rem 1rem;
     border: 1px solid #ccc;
     background: #ff9c22;
@@ -43,7 +43,99 @@
     width: 200px;
     font-size: 1rem;
   }
-  
+   */
+/* container around toggle + menu */
+.breed-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+/* the button that opens the dropdown */
+.breed-dropdown .dropdown-toggle {
+  background-color: rgb(47, 1, 87);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: 800;
+  padding: 1.25rem 1.25rem;
+  cursor: pointer;
+  min-width: 180px;
+  text-align: center;
+  color: #ff9c22;
+}
+
+/* the hidden dropdown panel */
+.breed-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 270px;               
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* show when container has .open */
+.breed-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* space inside the panel */
+.breed-dropdown .breed-checkboxes {
+  padding: 0.5em;
+}
+
+/* each row: checkbox + label */
+.breed-dropdown .breed-checkboxes label {
+  display: flex;
+  align-items: center;
+  padding: 0.25em 0;
+  cursor: pointer;
+}
+
+/* small gap between box and text */
+.breed-dropdown .breed-checkboxes input {
+  margin-right: 0.5em;
+}
+
+.breed-dropdown input[type="checkbox"] {
+  accent-color:#ff9c22; 
+}
+/* footer area for buttons */
+.breed-dropdown .dropdown-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  border-top: 1px solid #eee;
+  background-color: #fafafa;
+  z-index: 10;
+}
+
+/* style the Apply button */
+.breed-dropdown .dropdown-actions button {
+  background-color:rgb(47, 1, 87);
+  color:#ff9c22;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+/* hover states */
+.breed-dropdown .dropdown-actions button:hover {
+  background-color:#ff9c22;
+  color: rgb(47, 1, 87);
+}
+
+
   .sort-toggle {
     padding: 1rem 1rem;
     background: rgb(47, 1, 87);

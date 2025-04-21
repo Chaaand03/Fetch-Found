@@ -52,7 +52,7 @@
     left: 50%;
     width: 50%;
     transform: translateX(-50%);
-    background-color: rgb(47, 1, 87);    /* primary blue */
+    background-color: rgb(47, 1, 87);    
     color: #ff9c22;
     border: none;
     padding: 0.5rem 1rem;
@@ -71,10 +71,19 @@
     transform: translateX(-50%) scale(1.05);
   }
   
-  /* Active (favorited) state */
   .fav-button.fav {
     background-color: #ff9c22; 
     color: rgb(47, 1, 87);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
 

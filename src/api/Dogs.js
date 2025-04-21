@@ -1,4 +1,6 @@
-const BASE_URL = 'https://frontend-take-home-service.fetch.com';
+// const BASE_URL = 'https://frontend-take-home-service.fetch.com';
+
+import { ENDPOINTS, API_BASE_URL } from "./APIConstants";
 
 async function checkStatus(response) {
   if (!response.ok) {
@@ -10,7 +12,7 @@ async function checkStatus(response) {
 
 //Login
 export async function login(name, email) {
-  const res = await fetch(`${BASE_URL}/auth/login`, {
+  const res = await fetch(ENDPOINTS.LOGIN, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -24,7 +26,7 @@ export async function login(name, email) {
 
 //Logout
 export async function logout() {
-  const res = await fetch(`${BASE_URL}/auth/logout`, {
+  const res = await fetch(ENDPOINTS.LOGOUT, {
     method: 'POST',
     credentials: 'include'
   });
@@ -34,8 +36,17 @@ export async function logout() {
 
 //Dog-breeds
 export async function getBreeds() {
-  const res = await fetch(`${BASE_URL}/dogs/breeds`, {
+  const res = await fetch(ENDPOINTS.GET_DOG_BREEDS, {
     credentials: 'include',
+  });
+  await checkStatus(res);
+  return res.json(); 
+}
+
+export async function getZipCodes() {
+  const res = await fetch(ENDPOINTS.GET_LOCATIONS, {
+    credentials: 'include',
+    method: 'POST',
   });
   await checkStatus(res);
   return res.json(); 
@@ -55,7 +66,7 @@ export async function searchDogs({
 
   // If the server gave us back a full “next” or “prev” path, use that directly:
   if (typeof from === 'string' && from.startsWith('/dogs/search')) {
-    url = `${BASE_URL}${from}`;
+    url = `${API_BASE_URL}${from}`;
   } else {
     const params = new URLSearchParams();
     if (breeds?.length)   breeds.forEach(b => params.append('breeds', b));
@@ -66,7 +77,7 @@ export async function searchDogs({
     if (from)             params.append('from', from);
     if (sort)             params.append('sort', sort);
 
-    url = `${BASE_URL}/dogs/search?${params.toString()}`;
+    url = `${API_BASE_URL}/dogs/search?${params.toString()}`;
   }
 
   const res = await fetch(url, { credentials: 'include' });
@@ -78,7 +89,7 @@ export async function searchDogs({
 export async function getDogsByIds(dogIds = []) {
   const ids = Array.isArray(dogIds) ? dogIds.slice(0, 100) : [];
 
-  const res = await fetch(`${BASE_URL}/dogs`, {
+  const res = await fetch(ENDPOINTS.GET_DOGS, {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
@@ -89,7 +100,7 @@ export async function getDogsByIds(dogIds = []) {
 }
 
 export async function matchDogs(dogIds = []) {
-  const res = await fetch(`${BASE_URL}/dogs/match`, {
+  const res = await fetch(ENDPOINTS.MATCH_DOGS, {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
