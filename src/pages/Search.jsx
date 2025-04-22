@@ -54,9 +54,9 @@ export default function Search() {
     setCursor(null);
     setIsOpen(false);
   };
-  const cancelFilter = () => {
-    setIsOpen(false);      
-  };
+  // const cancelFilter = () => {
+  //   setIsOpen(false);      
+  // };
   useEffect(() => {
     async function loadDogs() {
       setLoading(true);

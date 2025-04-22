@@ -2,11 +2,10 @@ import React, {useState, useEffect}from 'react';
 import { NavLink, useLocation} from 'react-router-dom';
 import './Navbar.css'; // optional, for your styles
 
-export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
+export default function Navbar( { isLoggedIn, onLogout} ) {
   const { pathname } = useLocation();
   const isLoginPage = pathname === '/login';
   const showNav = isLoggedIn && !isLoginPage;
-
   const [favCount, setFavCount] = useState(
     () => JSON.parse(localStorage.getItem('favorites') || '[]').length
   );
@@ -16,8 +15,6 @@ export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
       const arr = JSON.parse(localStorage.getItem('favorites') || '[]');
       setFavCount(arr.length);
     }
-
-    // // 3) Listen & cleanup
     window.addEventListener('favoritesChanged', updateCount);
     return () => window.removeEventListener('favoritesChanged', updateCount);
   }, []);
@@ -62,6 +59,7 @@ export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
               </button>
             </li>
           </ul>
+          <div className="nav-overlay" onClick={closeMenu} />
         </>
       )}
 
