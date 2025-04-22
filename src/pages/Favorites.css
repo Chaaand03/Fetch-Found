@@ -1,233 +1,242 @@
 .favorites-page {
-    padding: 1rem 1rem;
-    text-align: center;
-    align-items: center;
-    justify-items:auto;
+  padding: 1rem 1rem;
+  text-align: center;
+  align-items: center;
+  justify-items: auto;
+}
+
+.favorites-page h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.no-favs {
+  color: #555;
+  margin-top: 10rem;
+  font-size: 2rem;
+}
+
+.fav-circle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.circle-card {
+  position: relative;
+  margin: 1rem;
+  width: 250px;
+  height: 250px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff9c22ed;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background: #420171e2;
+}
+
+.circle-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.circle-card:hover .circle-image {
+  transform: scale(1.05);
+}
+
+.info-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  text-align: center;
+}
+
+.circle-image:hover .info-overlay {
+  opacity: 1;
+}
+
+.match-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--purple);
+  color: var(--gold);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  transition: background-color 0.2s;
+}
+
+.match-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: white;
+}
+
+.match-button:not(:disabled):hover {
+  background-color: #47027a;
+}
+
+.match-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+.match-block {
+  display: flex;
+  background: var(--gold);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.match-image {
+  width: 50%;
+  object-fit: cover;
+  height: auto;
+}
+
+.match-details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.match-name {
+  font-size: 2rem;
+  color: var(--purple);
+  justify-content: center;
+}
+
+.continue-button {
+  margin: 5rem auto 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  background-color: var(--purple);
+  color: var(--gold);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.continue-button:hover {
+  background-color: #47027a;
+  transform: translateY(-2px);
+}
+
+
+@media screen and (max-width: 768px) {
+  .match-found-page {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 2rem;
+    padding: 1.5rem 0.5rem;
   }
-  
-  .favorites-page h2 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
+
+  .match-found-page h2 {
+    font-size: 1.8rem;
   }
-  
-  .no-favs {
-    color: #555;
-    font-size: 1rem;
-  }
-  
+
   .fav-circle-grid {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 3rem;
-    align-items: center;
-    padding: 2rem;
-    margin: 0 auto;   
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
   }
-  
-  .circle-card {
-    position: relative;           
-    margin: 1rem;
-    width: 250px;
-    height: 250px;
-  }
-  .remove-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #ff9c22ed;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 0.9rem;
-    cursor: pointer;
-  }
-  
-  .remove-button:hover {
-    background: #420171e2;
-  }
-
-  .circle-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  .circle-card:hover .circle-image {
-    transform: scale(1.05);
-  }
-  
-
-  .info-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    text-align: center;
-  }
-  .circle-image:hover .info-overlay {
-    opacity: 1;
-  }
-  
-  .match-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.75rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    background-color: #2f0157;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
-    margin-top: 3rem;
-    transition: background-color 0.2s;
-  }
-  .match-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  .match-button:not(:disabled):hover {
-    background-color: #47027a;
-  }
-  
-  .match-result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    margin: 0 auto;
-    min-height: 60vh; 
-    box-sizing: border-box;
-  }
-  
 
   .match-block {
-    display: flex;
-    background: #ff9c22;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-width: 800px;
-    width: 100%;
-  }
-  
-  .match-image {
-    width: 50%;
-    object-fit: cover;
-    height: auto;
-  }
-  
-  .match-details {
-    padding: 2rem;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.75rem;
+    margin: 0 auto;
   }
-  
-  .match-name {
-    font-size: 2rem;
-    color: #2f0157;
-    justify-content: center;
+
+  .match-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .match-details {
+    padding: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .continue-button {
-    margin: 5rem auto 0;        
-    padding: 0.75rem 1.5rem;
-    font-size: 1.75rem;
-    font-weight: 800;
-    background-color: #2f0157; 
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 1.5rem;
   }
-  
-  .continue-button:hover {
-    background-color: #47027a;
-    transform: translateY(-2px);
-  }
-  
-
-@media screen and (max-width: 768px) {
-    .match-found-page {
-      margin-left: 1em;
-      margin-right: 1em;
-      margin-top: 2rem;
-      padding: 1.5rem 0.5rem;
-    }
-  
-    .match-found-page h2 {
-      font-size: 1.8rem;
-    }
-  
-    .fav-circle-grid {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1.5rem;
-      padding: 1rem;
-    }
-
-    .match-block {
-        flex-direction: column;
-        margin: 0 auto;
-      }
-      .match-image {
-        width: 100%;
-        height: 200px;
-      }
-      .match-details {
-        padding: 1.5rem;
-        font-size: 1.5rem;
-      }
-      .continue-button {
-        margin-top: 1.5rem;
-      }
-  }
+}
 
 @media screen and (max-width: 480px) {
-    .match-found-page {
-      margin-left: 0.5em;
-      margin-right: 0.5em;
-      margin-top: 1.5rem;
-    }
-  
-    .match-found-page h2 {
-      font-size: 1.75rem;
-    }
-  
-    .fav-circle-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1rem;
-      padding: 0.5rem;
-    }
-
-    .circle-image:active .info-overlay {
-      opacity: 1;
-    }
-    .continue-button {
-        width: 100%;
-        max-width: 300px;
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-      }
-
-    .match-details{
-        font-size: 1.25rem;
-    }
+  .match-found-page {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 1.5rem;
   }
+
+  .match-found-page h2 {
+    font-size: 1.75rem;
+  }
+
+  .fav-circle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .circle-image:active .info-overlay {
+    opacity: 1;
+  }
+
+  .continue-button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .match-details {
+    font-size: 1.25rem;
+  }
+}

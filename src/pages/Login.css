@@ -1,5 +1,5 @@
 .login-page {
-  position: fixed;     
+  position: fixed;
   inset: 0;
   background: linear-gradient(135deg, var(--purple), var(--gold));
   display: flex;
@@ -12,17 +12,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;  
+  background-color: none;
 }
 
 .form-box {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;     
-  gap: 1.5rem;             
-  padding: 2rem;
-  background: rgba(255,255,255,0.8);
-  border-radius: 1rem; */
   background: none;
   padding: 3rem;
   border-radius: 12px;
@@ -36,20 +29,12 @@
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  margin: 0;              
+  margin: 0;
   line-height: 1.2;
-  color:rgb(237, 228, 250) !important;
+  color: rgb(237, 228, 250) !important;
   margin-bottom: 4rem;
 }
 
-/* Heading */
-/* .form-box h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #2f0157;         
-} */
-
-/* Form fields */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -64,20 +49,22 @@
   border-radius: 6px;
   box-sizing: border-box;
   background: none;
-  color:rgb(237, 228, 250);;
+  color: rgb(237, 228, 250);
+  ;
 }
+
 .login-form input::placeholder {
-  color: rgb(237, 228, 250);       
-  opacity: 1;        
+  color: rgb(237, 228, 250);
+  opacity: 1;
 }
-/* Submit button */
+
 .login-form button {
   margin-top: 0.5rem;
   padding: 1rem;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ff9c22;
-  background-color: rgb(47, 1, 87);  /* primary coral */
+  color: var(--gold);
+  background-color: var(--purple);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -88,10 +75,8 @@
   background-color: rgb(77, 3, 142);
 }
 
-/* Right column: image */
 .image-container {
   flex: 1;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   background-color: none;
@@ -108,16 +93,17 @@
   object-fit: contain;
 }
 
-/* Responsive: stack on narrow screens */
 @media (max-width: 768px) {
   .login-page {
     flex-direction: column;
   }
+
   .form-container,
   .image-container {
     flex: none;
     width: 100%;
   }
+
   .image-container img {
     max-width: 100%;
   }
@@ -129,20 +115,23 @@
     font-size: 2.5rem;
     padding: 0 1rem;
   }
+
   .form-box {
     padding: 2rem;
     gap: 1rem;
   }
+
   .form-container,
   .image-container {
     flex: none;
     width: 100%;
   }
+
   .image-container img {
-    display: block;        
-    width: 100%;           
-    height: auto;          
-    object-fit: contain;   
-    max-height: 35vh;      
-}
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 35vh;
+  }
 }
