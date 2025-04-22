@@ -31,20 +31,66 @@ Fetch is a single‑page application that makes it fun and easy for users to:
 
 ## ✨ Key Features
 
+- **Login & Logout**  
+  Users sign in with their name & email → a simple token is stored in `localStorage`; logging out clears the token & saved favorites and redirects back to the login screen
+
+  <img width="1706" alt="image" src="https://github.com/user-attachments/assets/d3ffa720-3b95-4d4c-8d1b-6bfb4137156f" />
+
+ 
 - **Interactive Search & Pagination**  
-  Fetches IDs via `searchDogs`, then loads details with `getDogsByIds`  
+  Fetches IDs via `searchDogs`, then loads details with `getDogsByIds`
+
+  <img width="1707" alt="image" src="https://github.com/user-attachments/assets/45274b30-910b-4998-84be-88e4d3f76946" />
+
+  <img width="1709" alt="image" src="https://github.com/user-attachments/assets/e176f4b8-273e-4c5d-8f4e-d939737308b6" />
+
+
 - **Breed Filter Dropdown**  
-  Multi‑select checkboxes, Apply/Clear actions, and click‑outside to cancel  
+  Multi‑select checkboxes, Apply/Clear actions, and click‑outside to cancel
+   
 - **Sorting**  
-  Alphabetical toggle between ascending (“A → Z”) and descending (“Z → A”)  
+  Alphabetical toggle between ascending (“A → Z”) and descending (“Z → A”)
+
+  <img width="1709" alt="image" src="https://github.com/user-attachments/assets/a490d5e4-ff8c-46ca-8e02-42152ea4abc6" />
+
+
 - **Favorites Management**  
-  ♥ Favorite/unfavorite any dog; count badge in navbar and footer prompt  
+  ♥ Favorite/unfavorite any dog; count badge in navbar and floating footer prompt
+
+  <img width="1709" alt="image" src="https://github.com/user-attachments/assets/67dc0036-65eb-46b6-be4d-82deab9c5323" />
+
+
+- **View All Favorites Page**  
+  Dedicated page that displays all favorited dogs in a grid, with options to remove or proceed to match
+
+   <img width="1707" alt="image" src="https://github.com/user-attachments/assets/bf1992e8-e6a4-4706-b1a5-2985d0828fa2" />
+
+
 - **Make a Match**  
-  Sends your favorites list to `matchDogs` and displays your perfect pup  
+  Sends your favorites list to `matchDogs` and displays your perfect pup
+
+  <img width="1709" alt="image" src="https://github.com/user-attachments/assets/5afab9f8-f343-4e77-9eb2-6f1f5535b028" />
+
+
 - **Protected Routes**  
-  Login gate using React Router’s `<Navigate>` logic  
-- **Responsive “Hamburger” Menu**  
-  Mobile‑friendly nav, overlay backdrop, and close on link click  
+  Login gate using React Router’s `<Navigate>` logic
+  
+- **Responsive Design**  
+  Ensured the entire app is fully responsive across mobile, tablet, and desktop layouts  
+
+
+  <img width="401" alt="image" src="https://github.com/user-attachments/assets/c38dd8bc-6db8-4305-8663-89d76bcee867" />
+
+  <img width="398" alt="image" src="https://github.com/user-attachments/assets/05cbf41d-db15-4040-afe1-f76042bc2228" />
+
+  <img width="397" alt="image" src="https://github.com/user-attachments/assets/1d256730-658e-4add-b031-58d4b37240b0" />
+
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/7201e686-2b92-472d-9ab2-189de07a8dd0" />
+
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/286a7712-2354-45a3-bfc5-aa7f17d53158" />
+
+  <img width="401" alt="image" src="https://github.com/user-attachments/assets/796ff455-fcc2-4807-9119-2894dd34e44d" />
+
 
 
 ## 🛠️ Tech Stack
@@ -53,7 +99,8 @@ Fetch is a single‑page application that makes it fun and easy for users to:
 - **State:** React Hooks (`useState`, `useEffect`, `useRef`)  
 - **Storage:** `localStorage` + custom window events  
 - **API Layer:** `searchDogs`, `getDogsByIds`, `getBreeds`, `matchDogs`, `login`, `logout`  
-- **Build Tools:** Vite 
+- **Build Tools:** Vite
+- **Hosting & Deployment:** Vercel 
 - **Assets:** SVG/PNG images
 
 
