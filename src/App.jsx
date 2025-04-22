@@ -9,7 +9,7 @@ import {
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Search from './pages/Search';
-import MatchFound from './pages/Match-Found';
+import Favorites from './pages/Favorites';
 import { logout as apiLogout } from './api/Dogs';
 
 function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
@@ -66,9 +66,9 @@ function AppRoutes({ isLoggedIn, setIsLoggedIn }) {
         />
         
         <Route
-          path="/matchfound"
+          path="/favorites"
           element={
-            isLoggedIn ? <MatchFound /> : <Navigate to="/login" replace />
+            isLoggedIn ? <Favorites /> : <Navigate to="/login" replace />
           }
         />
         

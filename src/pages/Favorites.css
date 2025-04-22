@@ -1,11 +1,11 @@
-.match-found-page {
+.favorites-page {
     padding: 1rem 1rem;
     text-align: center;
     align-items: center;
     justify-items:auto;
   }
   
-  .match-found-page h2 {
+  .favorites-page h2 {
     font-size: 2.5rem;
     color: #ffffff;
     margin-bottom: 1rem;

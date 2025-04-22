@@ -1,10 +1,10 @@
-import './Match-Found.css'
+import './Favorites.css'
 import { getDogsByIds, matchDogs } from '../api/Dogs';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function MatchFound() {
+export default function Favorites() {
   const [favIds, setFavIds] = useState([]);
   const [favDogs, setFavDogs] = useState([]);
   const [matchDog, setMatchDog] = useState(null);
@@ -73,7 +73,7 @@ export default function MatchFound() {
   
   return (
     <>
-      <div className="match-found-page">
+      <div className="favorites-page">
         {matchDog ? (
           <div className="intro">
             <div className="maintext">

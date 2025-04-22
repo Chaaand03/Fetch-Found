@@ -29,7 +29,7 @@ export default function FavoritesFooter() {
         <div
         className="favorites-footer"
         // optional: also close if you click anywhere in the footer
-        onClick={() => navigate('/matchfound')}
+        onClick={() => navigate('/favorites')}
       > 
         <span className="favorites-footer__text">
           View my Favorites ({favCount})
@@ -38,7 +38,7 @@ export default function FavoritesFooter() {
           className="favorites-footer__btn"
           onClick={e => {
             e.stopPropagation();      // prevent the outer div’s onClick
-            navigate('/matchfound');
+            navigate('/favorites');
           }}
         >
           ♥

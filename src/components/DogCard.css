@@ -33,14 +33,14 @@
   .dog-name {
     font-size: 1.5rem;
     margin: 0 0 0.5rem;
-    color: rgb(47, 1, 87);  
+    color: --purple;  
   }
   
   .dog-breed,
   .dog-age,
   .dog-zip {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #000000;
   }
   
@@ -51,8 +51,8 @@
     left: 50%;
     width: 50%;
     transform: translateX(-50%);
-    background-color: rgb(47, 1, 87);    
-    color: #ff9c22;
+    background-color: var(--purple);    
+    color: var(--gold);
     border: none;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -71,8 +71,8 @@
   }
   
   .fav-button.fav {
-    background-color: #ff9c22; 
-    color: rgb(47, 1, 87);
+    background-color: var(--gold); 
+    color: var(--purple);
     border: none;
     padding: 0.7rem 1rem;
     font-size: 0.9rem;

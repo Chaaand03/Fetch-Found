@@ -43,7 +43,7 @@ export default function Navbar( { isLoggedIn, onLogout, favoritesCount} ) {
               </NavLink>
             </li>
             <li className="favorites-item">
-              <NavLink to="/matchfound" onClick={closeMenu}>
+              <NavLink to="/favorites" onClick={closeMenu}>
               Favorites
               {favCount > 0 && (
                   <span className='badge'>{favCount}</span>
